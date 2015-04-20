@@ -2,10 +2,10 @@
 Version of RoboNewbie a basic framework for experiments with simulated humanid robots.  
 
 <h2>Contents </h2>
-<li>[Simspark User Manual](#manual)</li>
-<li>[Installation on Windows, Mac, and Linux](#windows)</li>
-<li>[Getting Started with Simspark](#started)</li>
-<li>[RoboNewbie](#robot)</li>
+[Simspark User Manual](#manual)<br>
+[Installation on Windows, Mac, and Linux](#windows)<br>
+[Getting Started with Simspark](#started)<br>
+[RoboNewbie](#robot)
 
 
 <h2 id="manual">Simspark User Manual</h2>
