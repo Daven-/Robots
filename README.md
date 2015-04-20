@@ -32,6 +32,7 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 </ul>
 
 <h2 id="robot">RoboNewbie</h2>
+<p>“RoboNewbie is a basic framework for experiments with simulated humanoid robots. It provides interfaces to the simulated sensors and effectors of the robot, and a simple control structure. The framework and the examples are implemented in JAVA with detailed documentations and explanations. That makes it useful even for beginners in Robotics.” </p>
 <ul>
 <li></li>
 </ul>
