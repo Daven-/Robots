@@ -3,13 +3,13 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 
 <h2>Contents </h2>
 <ul>
-<li>Simspark User Manual</li>
-<li>Installation on Windows, Mac, and Linux</li>
-<li>Getting Started with Simspark</li>
-<li>RoboNewbie</li>
+<li></a href="manual">Simspark User Manual</a></li>
+<li><a href="windows">Installation on Windows, Mac, and Linux</a></li>
+<li><a href="started">Getting Started with Simspark</a></li>
+<li><a href="robot">RoboNewbie</a></li>
 </ul>
 
-<h2 id="userManual">Simspark User Manual</h2>
+<h2 id="manual">Simspark User Manual</h2>
 <ul>
 <li>http://simspark.sourceforge.net/wiki/index.php/Users_Manual#Wiki_Version </li>
 </ul>
@@ -30,4 +30,9 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 <li>Open rcsoccersim3d.windowscommandscript it should open up the simulation environment </li>
 <li>Use the arrows to move around the field, the mouse to look around, and left click to zoom out (full list of commands at: http://simspark.sourceforge.net/wiki/index.php/Monitor)</li>
 <li>In \bin open rcssagent3d.windowscommandscript to drop a NAO robot at coordinates 0,0 (upper left corner) </li>
+</ul>
+
+<h2 id="robot">RoboNewbie</h2>
+<ul>
+<li></li>
 </ul>
