@@ -25,12 +25,13 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 <h2 id="started">Getting Started with Simspark</h2>
 <ul>
 <li>Head on over to the directory were the program was installed to: C:\Program Files (x86)\rcssserver3d 0.6.7\bin if you can’t find it there it might be in C:\Program Files \rcssserver3d 0.6.7\bin</li>
-<li>Inside \bin you will find the following files (I’d suggest making shortcuts on your desktop) </li>
-<li>Open rcsoccersim3d.windowscommandscript it should open up the simulation environment </li>
+<li>Inside \bin you will find the following files which you can see in the screenshot below (I’d suggest making shortcuts on your desktop) 
+</li>
+<li>Open <strong>rcsoccersim3d.windowscommandscript</strong> it should open up the simulation environment </li>
 <li>Use the arrows to move around the field, the mouse to look around, and left click to zoom out (full list of commands at: http://simspark.sourceforge.net/wiki/index.php/Monitor)</li>
-<li>In \bin open rcssagent3d.windowscommandscript to drop a NAO robot at coordinates 0,0 (upper left corner) </li>
+<li>In \bin open <strong>rcssagent3d.windowscommandscript</strong> to drop a NAO robot at coordinates 0,0 (upper left corner) </li>
 </ul>
-
+![](https://github.com/Daven-/Robots/blob/master/img/bin-img.png)
 <h2 id="robot">RoboNewbie</h2>
 <p>“RoboNewbie is a basic framework for experiments with simulated humanoid robots. It provides interfaces to the simulated sensors and effectors of the robot, and a simple control structure. The framework and the examples are implemented in JAVA with detailed documentations and explanations. That makes it useful even for beginners in Robotics.” </p>
 <ul>
