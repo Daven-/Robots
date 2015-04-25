@@ -151,3 +151,11 @@ A stripped down version of <strong>Agent_BasicStructure.java</strong> or your co
     }
 
 ```
+
+<strong> Motion Editor </strong>
+RoboNewbie comes with a motion editor that saves you the time to pragmatically construct all the motions like walking and kicking, you can find it here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.zip
+
+You can find the tutorial for this motion editor here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.pdf
+
+Further instructions on how to implement the motions you created inside <strong>Agent_BasicStructure.java</strong> or your copy of this class, will be coming soon to this page.
+
