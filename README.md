@@ -32,8 +32,12 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 <li>In \bin open <strong>rcssagent3d.windowscommandscript</strong> to drop a NAO robot at coordinates 0,0 (upper left corner) </li>
 </ul>
 ![](https://github.com/Daven-/Robots/blob/master/img/bin-img.png)
-<h2 id="robot">RoboNewbie</h2>
+<h2 id="robot">RoboNewbie - Robots</h2>
 <p>“RoboNewbie is a basic framework for experiments with simulated humanoid robots. It provides interfaces to the simulated sensors and effectors of the robot, and a simple control structure. The framework and the examples are implemented in JAVA with detailed documentations and explanations. That makes it useful even for beginners in Robotics.” </p>
-<ul>
-<li></li>
-</ul>
+<strong>Getting Started with Robots</strong>
+<ol>
+<li>Clone or download the zip file for this repository</li>
+<li>Open the project in Netbeans or create a new project with existing sources using this folder. You can download NetBeans from here: https://netbeans.org/downloads/index.html. You only need the Java SE version.</li>
+<li>If you would like to follow the orginial RoboNewbie "Quick Start Tutorial" you can find it here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/RoboNewbieQuickStartTutorial.pdf</li>
+<li>Once you have the project open in NetBeans go into src/lavidarobots/ an open the <strong>Agent_BasicStructure.java</strong> file.</li>
+</ol>
