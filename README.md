@@ -55,7 +55,7 @@ moveJointTo(RobotConsts.LeftFootPitch, -30);
 // the foot pitches freedom is  -45 to 75
 // moveJointTo needs to be called inside the run() function
 ```
-A stripped down version of <strong>Agent_BasicStructure.java</strong> or youre copy of it
+A stripped down version of <strong>Agent_BasicStructure.java</strong> or your copy of it
 ```java
 
     // how long should the robot be simulated for in seconds
