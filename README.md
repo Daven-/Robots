@@ -44,6 +44,9 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 <li>run the file by right clicking inside of it and choosing "run file" or <strong>shift-F6</strong> (if you click the regular run command in NetBeans it will run the main project class which is not agent_basicstructure or your copy of it)</li>
 <li>look at the 3d environment and you should see a robot pop into existence to the left of the center circle and fall forewords.</li>
 </ol>
+![](https://github.com/Daven-/Robots/blob/master/img/robofall.png)
+<br>
+
 The following code is the bare minimum you need to understand in order to manipulate the NAO robot:
 ```java
 // pass in the joint you would like to manipulate, and what degree the joint should be moved to
