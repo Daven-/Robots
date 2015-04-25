@@ -157,5 +157,5 @@ RoboNewbie comes with a motion editor that saves you the time to pragmatically c
 
 You can find the tutorial for this motion editor here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.pdf
 
-Further instructions on how to implement the motions you created inside <strong>Agent_BasicStructure.java</strong> or your copy of this class, will be coming soon to this page.
+Further instructions on how to implement the motions you created inside <strong>Agent_BasicStructure.java</strong> or your copy of this class, will be coming soon to this page. For now you can find instructions on RoboNewbies Quick Start Guide: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/RoboNewbieQuickStartTutorial.pdf
 
