@@ -39,7 +39,10 @@ Version of RoboNewbie a basic framework for experiments with simulated humanid r
 <li>Clone or download the zip file for this repository</li>
 <li>Open the project in Netbeans or create a new project with existing sources using this folder. You can download NetBeans from here: https://netbeans.org/downloads/index.html. You only need the Java SE version.</li>
 <li>If you would like to follow the orginial RoboNewbie "Quick Start Tutorial" you can find it here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/RoboNewbieQuickStartTutorial.pdf</li>
-<li>Once you have the project open in NetBeans go into src/lavidarobots/ an open the <strong>Agent_BasicStructure.java</strong> file or create your own copy of it.</li>
+<li>Once you have the project open in NetBeans go into <strong>/lavidarobots/</strong> and open the <strong>Agent_BasicStructure.java</strong> file or create your own copy of it.</li>
+<li>Open <strong>rcsoccersim3d.windowscommandscript</strong></li>
+<li>run the file by right clicking inside of it and choosing "run file" or <strong>shift-F6</strong> (if you click the regular run command in NetBeans it will run the main project class which is not agent_basicstructure or your copy of it)</li>
+<li>look at the 3d environment and you should see a robot pop into existence to the left of the center circle and fall forewords.</li>
 </ol>
 The following code is the bare minimum you need to understand in order to manipulate the NAO robot:
 ```java
@@ -49,7 +52,7 @@ moveJointTo(RobotConsts.LeftFootPitch, -30);
 // the foot pitches freedom is  -45 to 75
 // moveJointTo needs to be called inside the run() function
 ```
-A stripped down version of <strong>Agent_BasicStructure.java</strong>
+A stripped down version of <strong>Agent_BasicStructure.java</strong> or youre copy of it
 ```java
 
     // how long should the robot be simulated for in seconds
