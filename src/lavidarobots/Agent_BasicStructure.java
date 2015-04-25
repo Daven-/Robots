@@ -218,7 +218,13 @@ public class Agent_BasicStructure {
      leftFootRoll -45-25
      */
 
-    private void armSwing(int joint, int wayPoint1, int wayPoint2) {
+    /**
+     * Loop a movement going from waypoint1 to waypoint2. 
+     * @param joint
+     * @param wayPoint1
+     * @param wayPoint2 
+     */
+    private void moveJointToLoop(int joint, int wayPoint1, int wayPoint2) {
         // go to waypoint1 then to waypoint2, repeat
         double degree = Math.toDegrees(percIn.getJoint(joint));
         switch (iActionId) {
