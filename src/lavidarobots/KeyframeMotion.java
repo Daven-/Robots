@@ -17,53 +17,6 @@ import keyframeMotion.util.KeyframeSequence;
 import util.Logger;
 import util.RobotConsts;
 
-/** 
- * Motions for the robot by processing of keyframe sequences.
- * 
- * An object of class KeyframeMotion loads robot movements (like "walking two 
- * steps" or "turning the head" etc.) from .txt-files and provides methods for 
- * applying these movements. 
- * 
- * Usage (usually during the think()-method of the agent class):
- * 1) Method ready(): Before a movement can be chosen, call ready() to check,
- * if the robot currently executes a move.
- * 2) Methods set...(): Choose a movement with one of the set...() methods 
- * (like setWalkForward()). This can be done only after the ready()-call, 
- * because otherwise the current movement would be aborted suddenly, so for 
- * example the robot would fall down while doing a walking step.
- * The setTest() method is a specific feature for testing new keyframe 
- * sequences. 
- * 3) At any time the method setLogging(...) can be executed to turn the 
- * logging of chosen moves on or off. If the logging is turned on, every time, 
- * when a move is set, the name of the move is logged. 
- *  
- * Required context in the agent class: 
- * The agent class must have an object of class EffectorOutput and one of class
- * PerceptorInput, and they must be used correctly as explained in the comments
- * on the classes.
- * In the act()-method of the agent class: method 
- * KeyframeMotion.executeKeyframeSequence() must be called before the
- * EffectorOutput-method sendAgentMessage().
- * An example for a correct usage context of KeyframeMotion is class
- * Agent_SimpleWalkToBall in package examples.agentSimpleWalkToBall.
- * 
- * Integrating new motions to the implementation of this class:
- * 1) Save the new keyframe sequence in folder 
- * "[RoboNewbie project folder]/keyframes/" .
- * 2) Add a new class variable to KeyframeMotion just like WALK_FORWARD_SEQUENCE.
- * 3) Extend the constructor to load the new sequence into the new variable.
- * 4) Add a new set...() method just like setWalkForward(). (Not like setTest()!)
- * 
- * Using KeyframeMotion together with other motion implementations:
- * As mentioned above, method executeKeyframeSequence() has to be called in
- * every cycle. After this call, there are set commands for every joint
- * effector. Other motion classes can overwrite the commands with the
- * EffectorOutput instance of the agent.
- * See also the comment on method executeKeyframeSequence() and on class
- * EffectorOutput. Example: In Agent_SimpleSoccer.java (especially method act())
- * in package examples.agentSimpleSoccer another motion class is used together
- * with KeyframeMotion.
- */
 public class KeyframeMotion {
 
   private enum MotionState {
@@ -78,6 +31,11 @@ public class KeyframeMotion {
   private final EffectorOutput effOut;
   private final Logger log;
   boolean loggingOn;
+  private Keyframe actualKeyframe = null;         // These three variables could  
+  private int leftCyclesForActualFrame = 0;       // be used instead of state.
+  private KeyframeSequence actualSequence = null; // But then the code becomes less clear.
+  private MotionState state = MotionState.READY_TO_MOVE;
+  
   private static KeyframeSequence WALK_FORWARD_SEQUENCE;
   private static KeyframeSequence FALL_BACK_SEQUENCE;
   private static KeyframeSequence FALL_FORWARD_SEQUENCE;
@@ -100,12 +58,6 @@ public class KeyframeMotion {
   private static KeyframeSequence BAD_WALK_PLOVDIV2014_SEQUENCE;
   private static KeyframeSequence ALPHA_KICK_PLOVDIV2014_SEQUENCE; 
   private static KeyframeSequence STOP_WALKING_PLOVDIV2014_SEQUENCE; 
-  
-  
-  private Keyframe actualKeyframe = null;         // These three variables could  
-  private int leftCyclesForActualFrame = 0;       // be used instead of state.
-  private KeyframeSequence actualSequence = null; // But then the code becomes less clear.
-  private MotionState state = MotionState.READY_TO_MOVE;
   
   private double[] lastCycleAngles = new double[RobotConsts.JointsCount];
 
@@ -131,6 +83,7 @@ public class KeyframeMotion {
 
     KeyframeFileHandler keyframeReader = new KeyframeFileHandler();
 
+    // copy txt files into /keyframes
     WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemming-nika.txt");
     FALL_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("nika_fall_back.txt");
     FALL_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("fall_forward.txt");
