@@ -201,6 +201,7 @@ public class Agent_SoccerTeam {
     else
     {
     kfMotion.executeKeyframeSequence();
+    kfMotion.setKick_Plovdiv2014();
     lookAround.look(); // No matter, which move the robot executes, it should
                        // always turn its head around. So the LookAroundMotion
                        // is called after the KeyframeMotion, to overwrite the 
