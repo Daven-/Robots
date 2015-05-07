@@ -169,7 +169,7 @@ The three important classes needed in order to use the motion editor files are:
 <li> Think.java </li>
 <li> KeyframeMotion.java </li>
 </ul>
-You can find these files inside <strong> /lavidarobots </strong>
+You can find these files inside <strong> RoboNewbie_1.1/lavidarobots </strong>
 
 <strong>Agent.java</strong> is the skeleton that takes care of communicating to the simulated environment, you will rarely need to change anything in here, this is the main file you need to run (shift-F6 in netbeans). 
 
