@@ -189,7 +189,32 @@ WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemmin
 <strong>Think.java</strong> is where most of the AI should go. The following behavior is provided by the RoboNewbie team. The robot simply walks towards the ball if it is inside its field of vision, else it turns left until it finds the ball.
 
 ```java
- public void decide() {
+public class Think {
+     private static final double TOLERANCE_ANGLE = Math.toRadians(30);
+  
+  private KeyframeMotion motion;
+  private BallModel ball;
+  
+  private boolean robotIsWalking = false;
+
+  /**
+   * Constructor. 
+   * 
+   * @param localView Has to be already initialized. 
+   * @param motion Has to be already initialized. 
+   */
+  public Think(LocalFieldView localView, KeyframeMotion motion) {
+    this.ball = localView.getBall();
+    this.motion = motion;
+  }
+    
+  /**
+   * Decide, whether the robot should walk or turn to reach the ball and set the
+   * chosen movement. 
+   * If the ball is in front of the robot, it can just walk forward, else it 
+   * should turn left, and check its position relative to the ball again. 
+   */
+  public void decide() {
     
     // Take care not to interrupt an actually executed movement.
     // This has to be checked always when using class KeyframeMotion. 
@@ -209,5 +234,7 @@ WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemmin
     }
     
   }
+}
+
 ```
 
