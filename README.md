@@ -153,9 +153,61 @@ A stripped down version of <strong>Agent_BasicStructure.java</strong> or your co
 ```
 
 <strong> Motion Editor </strong>
-RoboNewbie comes with a motion editor that saves you from having to pragmatically construct all the motions like walking and kicking, you can find that here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.zip
+RoboNewbie comes with a motion editor which you can find here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.zip
+
+You will need java 3d to be able to run it: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html#java3d-1.5.1-oth-JPR
 
 You can find the tutorial for this motion editor here: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/MotionEditor.pdf
 
-Further instructions on how to implement the motions you created inside <strong>Agent_BasicStructure.java</strong> or your copy of this class will be coming soon to this page. For now you can find instructions on RoboNewbies Quick Start Guide: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/RoboNewbieQuickStartTutorial.pdf
+RoboNewbies Quick Start Guide: http://www2.informatik.hu-berlin.de/~naoth/RoboNewbie/RoboNewbieQuickStartTutorial.pdf
+
+With the motion editor it is easy to move past having to create motions and get into the AI for the robots, as the RoboNewbie team has created many of the basic movements you will need to play soccer. Still the motion editor is provided if you would like to create better or more effiecient motions. 
+ 
+The three important classes needed in order to use the motion editor files are: 
+<ul>
+<li> Agent.java </li>
+<li> Think.java </li>
+<li> KeyframeMotion.java </li>
+</ul>
+You can find these files inside <strong> /lavidarobots </strong>
+
+<strong>Agent.java</strong> is the skeleton that takes care of communicating to the simulated environment, you will rarely need to change anything in here, this is the main file you need to run (shift-F6 in netbeans). 
+
+<strong>KeyframeMotion.java</strong> is where the text files from the motion editor are read in and implemented. If you create new motions it is in this class you need to read them in: 
+```java
+// copy txt files into /keyframes
+private static KeyframeSequence WALK_FORWARD_SEQUENCE;
+WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemming-nika.txt");
+
+ public void setWalkForward() {
+    if (loggingOn) log.log("motion walk forward \n");
+    actualSequence = WALK_FORWARD_SEQUENCE;
+    state = MotionState.BETWEEN_FRAMES;
+  }
+```
+
+<strong>Think.java</strong> is where most of the AI should go. The following behavior is provided by the RoboNewbie team. The robot simply walks towards the ball if it is inside its field of vision, else it turns left until it finds the ball.
+
+```java
+ public void decide() {
+    
+    // Take care not to interrupt an actually executed movement.
+    // This has to be checked always when using class KeyframeMotion. 
+    if (motion.ready()) {
+
+      // If the ball lies in front of the robot, walk towards it. 
+      if (ball.isInFOVnow()
+          && (Math.abs(ball.getCoords().getAlpha())) < TOLERANCE_ANGLE) {
+        motion.setWalkForward();
+        robotIsWalking = true;
+      }else if (robotIsWalking) {
+        motion.setStopWalking();
+        robotIsWalking = false;
+      } else {
+        motion.setTurnLeft();
+      }
+    }
+    
+  }
+```
 
